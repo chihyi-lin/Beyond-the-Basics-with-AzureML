@@ -28,7 +28,7 @@ environment: azureml://registries/azureml/environments/lightgbm-3.3/versions/2
 command: >-
   python train_model.py 
   --train_data ${{inputs.train_data}}
-  --test_data ${{inputs.train_data}}
+  --test_data ${{inputs.test_data}}
   --max_leaf_nodes ${{inputs.max_leaf_nodes}}
   --min_samples_leaf ${{inputs.min_samples_leaf}}
   --max_depth ${{inputs.max_depth}}
