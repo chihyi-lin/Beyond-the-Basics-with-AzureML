@@ -22,7 +22,7 @@ from azure.ai.ml.sweep import (
 )
 
 # NOTE:  set your workspace name here!
-workspace_name="CSAzureML"
+workspace_name="SurgingRacoon"
 # NOTE:  if you do not have a cpu-cluster already, we will create one
 # Alternatively, change the name to a CPU-based compute cluster
 cluster_name="cpu-cluster"
@@ -101,7 +101,7 @@ def build_pipeline(raw_data):
 
 def prepare_pipeline_job(cluster_name):
     # must have a dataset already in place
-    cpt_asset=ml_client.data.get(name="ChicagoParkingTicketsFolder", version="1")
+    cpt_asset=ml_client.data.get(name="ChicagoParkingTicketsNew", version="1")
     raw_data=Input(type='uri_folder', path=cpt_asset.path)
     pipeline_job=build_pipeline(raw_data)
     # set pipeline level compute
